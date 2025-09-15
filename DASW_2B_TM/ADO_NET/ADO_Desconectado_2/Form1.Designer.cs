@@ -49,10 +49,12 @@ namespace ADO_Desconectado_2
             label3 = new Label();
             dataGridView4 = new DataGridView();
             textBox2 = new TextBox();
+            dataGridView5 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -156,7 +158,7 @@ namespace ADO_Desconectado_2
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(840, 376);
+            textBox1.Location = new Point(852, 376);
             textBox1.Margin = new Padding(2, 1, 2, 1);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(264, 23);
@@ -242,11 +244,24 @@ namespace ADO_Desconectado_2
             textBox2.Size = new Size(252, 23);
             textBox2.TabIndex = 16;
             // 
+            // dataGridView5
+            // 
+            dataGridView5.AllowUserToAddRows = false;
+            dataGridView5.AllowUserToDeleteRows = false;
+            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView5.Location = new Point(852, 236);
+            dataGridView5.Name = "dataGridView5";
+            dataGridView5.ReadOnly = true;
+            dataGridView5.RowHeadersWidth = 82;
+            dataGridView5.Size = new Size(510, 125);
+            dataGridView5.TabIndex = 17;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1384, 565);
+            Controls.Add(dataGridView5);
             Controls.Add(textBox2);
             Controls.Add(dataGridView4);
             Controls.Add(radioButton3);
@@ -271,6 +286,7 @@ namespace ADO_Desconectado_2
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,5 +310,6 @@ namespace ADO_Desconectado_2
         private Label label3;
         private DataGridView dataGridView4;
         private TextBox textBox2;
+        private DataGridView dataGridView5;
     }
 }

@@ -2,6 +2,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.VisualBasic;
 using System.Data;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ADO_Desconectado_2
 {
@@ -181,6 +182,10 @@ namespace ADO_Desconectado_2
                     //Obtengo un Lista con los contactos
                     var lq = (from c in (dataGridView1.SelectedRows[0].DataBoundItem as DataRowView).Row.GetChildRows(r1)
                               select new { Contacto = c.Field<string>(1), DataRowOrigen = c }).ToList<object>();
+
+                    var lq2 = (from c in (dataGridView1.SelectedRows[0].DataBoundItem as DataRowView).Row.GetChildRows(r1)
+                               select new { Contacto = c.Field<string>(1), Detalle = c.GetParentRow(r2).Field<string>(1) }).ToList<object>();
+
                     if (lq.Count > 0)
                     {
                         dataGridView4.DataSource = lq;
@@ -188,6 +193,13 @@ namespace ADO_Desconectado_2
                         dataGridView4.Columns[0].Width = 350;
                         dataGridView4_RowEnter(null, null);
                     }
+                    if (lq2.Count > 0)
+                    {
+                        dataGridView5.DataSource = lq2;
+
+                    }
+                    List<object> list = new List<object>();
+                    list.Add(new { id = "", Descri = "" });
                 }
             }
             catch (Exception)
