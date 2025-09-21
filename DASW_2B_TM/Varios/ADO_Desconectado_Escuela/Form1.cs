@@ -1,5 +1,6 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client.RP;
+using Microsoft.VisualBasic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -8,19 +9,15 @@ namespace Ejercicio1
     public partial class Form1 : Form
     {
         SqlConnection conexion;
-        SqlCommand comando;
         SqlDataAdapter adapter1, adapter2, adapter3, adapter4;
-        SqlCommandBuilder builder;
+        SqlCommandBuilder builder1;
         DataSet ds;
         DataTable dtAlumno, dtMateria, dtAlumnoMateriaCursando, dtAlumnoMateriaCursada;
         DataRelation r1, r2, r3, r4;
-
-        DataView view1, view2, view3;
         public Form1()
         {
             InitializeComponent();
         }
-
         private void Mostrar(DataGridView pGrilla, object pDatos)
         {
             pGrilla.DataSource = null;
@@ -41,12 +38,17 @@ namespace Ejercicio1
             //Conexion a la base de datos en la PC de la UAI
             //conexion = new SqlConnection("Data Source=.;Initial Catalog=bd_escuela;Integrated Security=True;Trust Server Certificate=True");
             conexion = new SqlConnection("Data Source=127.0.0.1,1433;Initial Catalog=bd_escuela;User ID=administrador;Password=ETN7dolores;Trust Server Certificate=True");
-            comando = new SqlCommand();
 
             adapter1 = new SqlDataAdapter("select * from alumnos", conexion);
             adapter2 = new SqlDataAdapter("select * from materias", conexion);
             adapter3 = new SqlDataAdapter("select * from alumno_materia_cursando", conexion);
             adapter4 = new SqlDataAdapter("select * from alumno_materia_cursada", conexion);
+
+            builder1 = new SqlCommandBuilder(adapter1);
+
+            adapter1.InsertCommand = builder1.GetInsertCommand();
+            adapter1.DeleteCommand = builder1.GetDeleteCommand();
+            adapter1.UpdateCommand = builder1.GetUpdateCommand();
 
             ds = new DataSet("bd_escuela");
             dtAlumno = new DataTable();
@@ -111,7 +113,6 @@ namespace Ejercicio1
 
                     var notas = from c in fila.Row.GetChildRows(r3)
                                 select c.Field<decimal>(2);
-
                     if (notas.Any()) txtPromedioAplazo.Text = notas.Average().ToString("0.00");
                     else txtPromedioAplazo.Text = "N/A";
 
@@ -133,6 +134,75 @@ namespace Ejercicio1
             {
                 ds.WriteXml("datosEscuela.xml", XmlWriteMode.WriteSchema);
                 MessageBox.Show("Archivo XML guardado con éxito!", "Archivo guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ExisteLegajo(int pLegajo)
+        {
+            bool rdo = false;
+            if (ds.Tables[0].Rows.Find(pLegajo) != null) rdo = true;
+            return rdo;
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string inputLegajo = Interaction.InputBox("Ingrese el legajo", "Alumno");
+                if (!int.TryParse(inputLegajo, out int legajo)) throw new Exception("El legajo tiene un formato inválido");
+                if (ExisteLegajo(legajo)) throw new Exception("El legajo ya existe!");
+
+                string nombre = Interaction.InputBox("Ingrese el nombre", "Alumno");
+                if (nombre.Length == 0) throw new Exception("El nombre no puede estar vacío!");
+                string apellido = Interaction.InputBox("Ingrese el apellido", "Alumno");
+                if (apellido.Length == 0) throw new Exception("El apellido no puede estar vacío!");
+
+                ds.Tables[0].Rows.Add(new object[] { legajo, nombre, apellido });
+                adapter1.Update(dtAlumno);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grillaAlumnos.Rows.Count == 0) throw new Exception("No hay alumnos!");
+                var alumno = (grillaAlumnos.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                alumno.Delete();
+                adapter1.Update(dtAlumno);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grillaAlumnos.Rows.Count == 0) throw new Exception("No hay alumnos para borrar!");
+                var alumno = (grillaAlumnos.SelectedRows[0].DataBoundItem as DataRowView).Row;
+
+                string nombre = Interaction.InputBox("Ingrese el nombre", "Alumno", alumno.Field<string>(1));
+                if (nombre.Length == 0) throw new Exception("El nombre no puede estar vacío!");
+                string apellido = Interaction.InputBox("Ingrese el apellido", "Alumno", alumno.Field<string>(2));
+                if (apellido.Length == 0) throw new Exception("El apellido no puede estar vacío!");
+
+                alumno.ItemArray = new object[]
+                {
+                    alumno.Field<int>(0),
+                    nombre,
+                    apellido
+                };
+                adapter1.Update(dtAlumno);
             }
             catch (Exception ex)
             {

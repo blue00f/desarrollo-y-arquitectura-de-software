@@ -41,6 +41,9 @@
             label5 = new Label();
             label6 = new Label();
             btnGuardarEnXml = new Button();
+            btnAgregar = new Button();
+            btnBorrar = new Button();
+            btnModificar = new Button();
             ((System.ComponentModel.ISupportInitialize)grillaAlumnos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grillaMateriasCursando).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grillaMateriasAprobadas).BeginInit();
@@ -64,7 +67,7 @@
             grillaMateriasCursando.AllowUserToAddRows = false;
             grillaMateriasCursando.AllowUserToDeleteRows = false;
             grillaMateriasCursando.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grillaMateriasCursando.Location = new Point(12, 242);
+            grillaMateriasCursando.Location = new Point(12, 299);
             grillaMateriasCursando.Name = "grillaMateriasCursando";
             grillaMateriasCursando.ReadOnly = true;
             grillaMateriasCursando.Size = new Size(438, 150);
@@ -86,7 +89,7 @@
             grillaMateriasPendientes.AllowUserToAddRows = false;
             grillaMateriasPendientes.AllowUserToDeleteRows = false;
             grillaMateriasPendientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grillaMateriasPendientes.Location = new Point(481, 242);
+            grillaMateriasPendientes.Location = new Point(481, 299);
             grillaMateriasPendientes.Name = "grillaMateriasPendientes";
             grillaMateriasPendientes.ReadOnly = true;
             grillaMateriasPendientes.Size = new Size(438, 150);
@@ -106,7 +109,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(12, 214);
+            label2.Location = new Point(12, 271);
             label2.Name = "label2";
             label2.Size = new Size(255, 25);
             label2.TabIndex = 5;
@@ -126,7 +129,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(481, 214);
+            label4.Location = new Point(481, 271);
             label4.Name = "label4";
             label4.Size = new Size(191, 25);
             label4.TabIndex = 7;
@@ -134,7 +137,7 @@
             // 
             // txtPromedioAplazo
             // 
-            txtPromedioAplazo.Location = new Point(131, 423);
+            txtPromedioAplazo.Location = new Point(141, 480);
             txtPromedioAplazo.Name = "txtPromedioAplazo";
             txtPromedioAplazo.ReadOnly = true;
             txtPromedioAplazo.Size = new Size(136, 23);
@@ -142,7 +145,7 @@
             // 
             // txtPromedioSinAplazo
             // 
-            txtPromedioSinAplazo.Location = new Point(130, 454);
+            txtPromedioSinAplazo.Location = new Point(140, 511);
             txtPromedioSinAplazo.Name = "txtPromedioSinAplazo";
             txtPromedioSinAplazo.ReadOnly = true;
             txtPromedioSinAplazo.Size = new Size(136, 23);
@@ -151,7 +154,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(10, 426);
+            label5.Location = new Point(20, 483);
             label5.Name = "label5";
             label5.Size = new Size(101, 15);
             label5.TabIndex = 10;
@@ -160,7 +163,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(10, 457);
+            label6.Location = new Point(20, 514);
             label6.Name = "label6";
             label6.Size = new Size(114, 15);
             label6.TabIndex = 11;
@@ -168,7 +171,7 @@
             // 
             // btnGuardarEnXml
             // 
-            btnGuardarEnXml.Location = new Point(793, 426);
+            btnGuardarEnXml.Location = new Point(793, 483);
             btnGuardarEnXml.Name = "btnGuardarEnXml";
             btnGuardarEnXml.Size = new Size(126, 23);
             btnGuardarEnXml.TabIndex = 12;
@@ -176,11 +179,44 @@
             btnGuardarEnXml.UseVisualStyleBackColor = true;
             btnGuardarEnXml.Click += btnGuardarEnXml_Click;
             // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(12, 204);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.TabIndex = 13;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnBorrar
+            // 
+            btnBorrar.Location = new Point(104, 204);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(75, 23);
+            btnBorrar.TabIndex = 14;
+            btnBorrar.Text = "Borrar";
+            btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(202, 204);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(75, 23);
+            btnModificar.TabIndex = 15;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(936, 501);
+            ClientSize = new Size(947, 595);
+            Controls.Add(btnModificar);
+            Controls.Add(btnBorrar);
+            Controls.Add(btnAgregar);
             Controls.Add(btnGuardarEnXml);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -220,5 +256,8 @@
         private Label label5;
         private Label label6;
         private Button btnGuardarEnXml;
+        private Button btnAgregar;
+        private Button btnBorrar;
+        private Button btnModificar;
     }
 }
