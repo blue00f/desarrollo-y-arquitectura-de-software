@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36429.23 d17.14
+VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo1", "Ejemplo1\Ejemplo1.csproj", "{24281ACD-784A-46F3-8D8B-FAF544FD7D7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mostrar_XML_Plano", "Mostrar_XML_Plano\Mostrar_XML_Plano.csproj", "{24281ACD-784A-46F3-8D8B-FAF544FD7D7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO_Desconectado_Escuela", "ADO_Desconectado_Escuela\ADO_Desconectado_Escuela.csproj", "{D14A756F-C9AC-DD4F-3CD4-8CED59BEFAA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital_Demo_MySQL", "Hospital_Demo_MySQL\Hospital_Demo_MySQL.csproj", "{9B8529C6-23C3-F6E2-E56E-293EFF65A295}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{24281ACD-784A-46F3-8D8B-FAF544FD7D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24281ACD-784A-46F3-8D8B-FAF544FD7D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24281ACD-784A-46F3-8D8B-FAF544FD7D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D14A756F-C9AC-DD4F-3CD4-8CED59BEFAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D14A756F-C9AC-DD4F-3CD4-8CED59BEFAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D14A756F-C9AC-DD4F-3CD4-8CED59BEFAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D14A756F-C9AC-DD4F-3CD4-8CED59BEFAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B8529C6-23C3-F6E2-E56E-293EFF65A295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8529C6-23C3-F6E2-E56E-293EFF65A295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8529C6-23C3-F6E2-E56E-293EFF65A295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8529C6-23C3-F6E2-E56E-293EFF65A295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

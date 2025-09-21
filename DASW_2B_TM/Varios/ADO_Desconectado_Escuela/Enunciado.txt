@@ -1,0 +1,14 @@
+Enunciado desarrollado en la clase 6:
+
+Desarrollar las tablas, los objetos de ADO.NET y en particular las relaciones
+que permitan ver en pantalla de todos los alumnos que tenemos en la grilla 1,
+del seleccionado en la grilla 2 las materias que está cursando, en la grilla 3
+las materias que posee aprobadas y en la grilla 4 las materias que le falta cursar.
+
+Conocemos a los alumnos por su legajo, nombre y apellido. Y las materias del plan
+de estudio por su id, descripción. También nos piden, en el caso de que la materia
+ya haya sido cursada, ver de esa grilla la nota que obtuvo el alumno. Por último,
+dos cajas de texto, una donde se vea el promedio general y otra con el promedio
+sin aplazo.
+
+Nota: se puede usar LINQ para mostrar los datos en la grilla en vez de usar DataTable
