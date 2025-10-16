@@ -55,7 +55,6 @@ namespace Perfiles
         {
             MessageBox.Show("Se ejecutó la función 5"); 
         }
-
         private void Mostrar()
         {
             int _y = 20;
@@ -189,8 +188,6 @@ namespace Perfiles
             }
         }
     }
-
-
     public class Orden : IComparer<Button>
     {
         public int Compare(Button x, Button y)
