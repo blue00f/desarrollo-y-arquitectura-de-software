@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Chart.Windows" Version="31.2.2" />
+    <PackageReference Include="Syncfusion.Licensing" Version="31.2.2" />
+    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="31.2.2" />
+  </ItemGroup>
+
+</Project>
