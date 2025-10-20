@@ -10,6 +10,13 @@ Aplicar conceptos de arquitectura de software y diseño orientado a objetos para
 
 ---
 
+## 📜 Licencias
+Este proyecto utiliza componentes de Syncfusion bajo una licencia Community otorgada para fines académicos y no comerciales. El uso de la biblioteca Syncfusion.Pdf.WinForms y otras herramientas relacionadas está sujeto a los términos y condiciones del acuerdo de licencia de Syncfusion.
+
+Si se publica este repositorio como código abierto (open source), se requiere aprobación previa de Syncfusion Inc., de acuerdo con las políticas establecidas por la empresa. Para más información, consulte la documentación oficial o comuníquese con el soporte de Syncfusion antes de hacer pública la distribución del código.
+
+---
+
 ## 📚 Contenido del Programa
 
 ### 🔹 Unidad 1: Acceso a Datos
