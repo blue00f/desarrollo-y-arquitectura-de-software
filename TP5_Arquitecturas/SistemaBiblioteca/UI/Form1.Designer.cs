@@ -42,6 +42,9 @@
             btnAgregarLibro = new Button();
             btnCrearPrestamo = new Button();
             btnModificarPrestamo = new Button();
+            btnBorrar = new Button();
+            btnExportarPdfGraphics = new Button();
+            btnExportarPdfGrid = new Button();
             ((System.ComponentModel.ISupportInitialize)grillaSocios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grillaLibros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grillaPrestamos).BeginInit();
@@ -86,7 +89,7 @@
             grillaLibros.Location = new Point(681, 49);
             grillaLibros.Name = "grillaLibros";
             grillaLibros.ReadOnly = true;
-            grillaLibros.Size = new Size(418, 150);
+            grillaLibros.Size = new Size(495, 150);
             grillaLibros.TabIndex = 2;
             // 
             // label3
@@ -190,11 +193,44 @@
             btnModificarPrestamo.UseVisualStyleBackColor = true;
             btnModificarPrestamo.Click += btnModificarPrestamo_Click;
             // 
+            // btnBorrar
+            // 
+            btnBorrar.Location = new Point(93, 423);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(75, 23);
+            btnBorrar.TabIndex = 14;
+            btnBorrar.Text = "Borrar";
+            btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
+            // 
+            // btnExportarPdfGraphics
+            // 
+            btnExportarPdfGraphics.Location = new Point(776, 315);
+            btnExportarPdfGraphics.Name = "btnExportarPdfGraphics";
+            btnExportarPdfGraphics.Size = new Size(142, 48);
+            btnExportarPdfGraphics.TabIndex = 15;
+            btnExportarPdfGraphics.Text = "Exportar reporte a PDF con PdfGraphics";
+            btnExportarPdfGraphics.UseVisualStyleBackColor = true;
+            btnExportarPdfGraphics.Click += btnExportarPdfGraphics_Click;
+            // 
+            // btnExportarPdfGrid
+            // 
+            btnExportarPdfGrid.Location = new Point(776, 369);
+            btnExportarPdfGrid.Name = "btnExportarPdfGrid";
+            btnExportarPdfGrid.Size = new Size(142, 48);
+            btnExportarPdfGrid.TabIndex = 16;
+            btnExportarPdfGrid.Text = "Exportar reporte a PDF con PdfGrid";
+            btnExportarPdfGrid.UseVisualStyleBackColor = true;
+            btnExportarPdfGrid.Click += btnExportarPdfGrid_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1111, 450);
+            ClientSize = new Size(1191, 450);
+            Controls.Add(btnExportarPdfGrid);
+            Controls.Add(btnExportarPdfGraphics);
+            Controls.Add(btnBorrar);
             Controls.Add(btnModificarPrestamo);
             Controls.Add(btnCrearPrestamo);
             Controls.Add(btnModificarLibro);
@@ -235,5 +271,8 @@
         private Button btnAgregarLibro;
         private Button btnCrearPrestamo;
         private Button btnModificarPrestamo;
+        private Button btnBorrar;
+        private Button btnExportarPdfGraphics;
+        private Button btnExportarPdfGrid;
     }
 }

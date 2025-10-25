@@ -14,7 +14,7 @@
             Id = pId;
             Socio = pSocio;
             Libro = pLibro;
-            Estado = "Activo";
+            Estado = "En curso";
             FechaPrestamo = pFechaPrestamo;
             FechaDevolucion = pFechaDevolucion;
         }

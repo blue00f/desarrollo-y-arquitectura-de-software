@@ -76,7 +76,7 @@ namespace ORM
             List<BE_Prestamo> prestamos = new List<BE_Prestamo>();
             foreach (DataRow f in _dao.Consultar(DAO.Tabla.Prestamo).Rows)
             {
-                prestamos.Add(new BE_Prestamo(f.Field<string>(0), _ormsocio.ObtenerPorId(f.Field<string>(1)), _ormlibro.ObtenerPorId(f.Field<string>(2)), f.Field<DateTime>(4), f.Field<DateTime>(5)));
+                prestamos.Add(new BE_Prestamo(f.Field<string>(0), _ormsocio.ObtenerPorId(f.Field<string>(1)), _ormlibro.ObtenerPorId(f.Field<string>(2)), f.Field<DateTime>(4), f.Field<DateTime>(5), f.Field<string>(3)));
             }
             return prestamos;
         }
