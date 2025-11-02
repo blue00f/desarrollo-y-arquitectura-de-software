@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtBiografia.Text" xml:space="preserve">
+    <value>Sir James Paul McCartney, nacido el 18 de junio de 1942 en Liverpool, Inglaterra, es un músico, cantante, compositor y multiinstrumentista británico reconocido mundialmente como uno de los miembros fundadores de The Beatles, la banda de rock más influyente de la historia. Desde muy joven, McCartney mostró un interés profundo por la música, aprendiendo a tocar el piano y la guitarra, y desarrollando habilidades que lo acompañarían a lo largo de toda su carrera. Su familia fomentó su inclinación musical, y a los 14 años ya componía sus primeras canciones.
+
+En 1957, McCartney conoció a John Lennon y se unió al grupo The Quarrymen, precursor de lo que sería The Beatles. Con la incorporación de George Harrison y más tarde Ringo Starr, la banda se consolidó y alcanzó fama internacional a partir de la década de 1960. McCartney se destacó como bajista principal del grupo, pero también mostró su versatilidad como cantante y compositor. Junto con Lennon, formó uno de los dúos de compositores más exitosos de todos los tiempos, responsable de clásicos como "Hey Jude", "Let It Be" y "Yesterday". Su estilo creativo y su capacidad para fusionar géneros musicales contribuyeron significativamente a la innovación y evolución del rock durante esa era.
+
+Tras la disolución de The Beatles en 1970, McCartney continuó su carrera como solista y fundó la banda Wings junto a su esposa Linda McCartney. Wings tuvo un éxito considerable durante los años 70, con álbumes emblemáticos como "Band on the Run" y "Venus and Mars". La carrera en solitario de McCartney ha sido igualmente prolífica, abarcando diversas facetas musicales, desde rock y pop hasta música clásica y electrónica. Ha publicado decenas de álbumes, y su influencia sigue vigente, siendo fuente de inspiración para músicos de todas las generaciones.
+
+Además de su talento musical, McCartney ha sido un activo defensor de causas sociales y humanitarias, incluyendo el vegetarianismo y la protección animal. Su compromiso con los derechos de los animales se consolidó a lo largo de los años y se refleja también en su trabajo y estilo de vida personal. Ha recibido numerosos premios y reconocimientos, incluidos 18 premios Grammy, un Oscar por la canción "Let It Be" y ha sido nombrado caballero por la reina Isabel II en 1997, recibiendo el título de Sir por su contribución a la música y la cultura británica.
+
+La vida personal de McCartney también ha sido objeto de atención pública. Su matrimonio con Linda Eastman fue emblemático, y juntos criaron tres hijos mientras compartían una intensa vida profesional y musical. Tras la muerte de Linda en 1998, McCartney continuó su carrera con nuevas colaboraciones y giras internacionales, manteniendo su estatus como una de las figuras más importantes de la música contemporánea. Su legado se refleja no solo en su extensa discografía, sino también en la influencia que ejerció sobre la evolución del rock y la cultura popular en todo el mundo.
+
+Paul McCartney, a lo largo de más de seis décadas, ha demostrado un talento excepcional, una creatividad incansable y un compromiso social que trasciende la música. Desde sus primeros días en Liverpool hasta su estatus actual como icono global, su vida y obra constituyen un ejemplo de cómo un artista puede combinar excelencia musical con conciencia social, dejando una huella imborrable en la historia de la música.</value>
+  </data>
+</root>
