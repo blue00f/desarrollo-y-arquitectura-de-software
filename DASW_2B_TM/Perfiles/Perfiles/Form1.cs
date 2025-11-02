@@ -22,39 +22,22 @@ namespace Perfiles
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            _u.Perfil = _p02; Mostrar(); 
+            _u.Perfil = _p02;
+            Mostrar(); 
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            _u.Perfil = _p01; Mostrar(); 
+            _u.Perfil = _p01;
+            Mostrar(); 
         }
  
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Se ejecutó la función 1");
-        }
-        private void nombredelafuncion(object sender, EventArgs e) { MessageBox.Show("Hicieron Click"); }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Se ejecutó la función 2"); 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Se ejecutó la función 3"); 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Se ejecutó la función 4"); 
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Se ejecutó la función 5"); 
-        }
+        private void nombredelafuncion(object sender, EventArgs e) => MessageBox.Show("Hicieron Click");
+        private void button1_Click(object sender, EventArgs e) => MessageBox.Show("Se ejecutó la función 1");
+        private void button2_Click(object sender, EventArgs e) => MessageBox.Show("Se ejecutó la función 2");
+        private void button3_Click(object sender, EventArgs e) => MessageBox.Show("Se ejecutó la función 3");
+        private void button4_Click(object sender, EventArgs e) => MessageBox.Show("Se ejecutó la función 4");
+        private void button5_Click(object sender, EventArgs e) => MessageBox.Show("Se ejecutó la función 5");
         private void Mostrar()
         {
             int _y = 20;
@@ -115,24 +98,19 @@ namespace Perfiles
     public class Perfil
     {
         PermisoCompuesto _pc;
-        public Perfil(PermisoCompuesto pCompuesto) { _pc = pCompuesto; }
-        public bool Validar(string pCodigo)
-        {
-            return _pc.RetornaPermisos().Exists(x => x.Codigo == pCodigo);
+        public Perfil(PermisoCompuesto pCompuesto)
+        { 
+            _pc = pCompuesto;
         }
+        public bool Validar(string pCodigo) => _pc.RetornaPermisos().Exists(x => x.Codigo == pCodigo);
     }
 
     public abstract class Permiso
     {
-        string _codigo;
+        public string Codigo { get; set; }
         public Permiso(string pCodigo)
         {
-            _codigo = pCodigo;
-        }
-        public string Codigo 
-        {
-            get { return _codigo; } 
-            set { _codigo = value; } 
+            Codigo = pCodigo;
         }
         //public bool SumaResta { get; set; }
         public abstract List<Permiso> RetornaPermisos();
@@ -140,51 +118,31 @@ namespace Perfiles
 
     public class PermisoSimple : Permiso
     {
-        public PermisoSimple(string pCodigo) : base(pCodigo)
-        {
-        }
-        public override List<Permiso> RetornaPermisos()
-        {
-            return new List<Permiso>() { this };
-        }
+        public PermisoSimple(string pCodigo) : base(pCodigo) { }
+        public override List<Permiso> RetornaPermisos() => new List<Permiso>() { this };
     }
     public class PermisoCompuesto : Permiso
     {
         List<Permiso> _l;
-
         List<Permiso> _laux;
         public PermisoCompuesto(string pCodigo) : base(pCodigo)
         {
             _l = new List<Permiso>();
         }
-        public void AgregarPermiso(Permiso Ppermiso)
-        {
-            _l.Add(Ppermiso);
-        }
-        public List<Permiso> Retornacomponentes()
-        {
-            return _l;
-        }
+        public void AgregarPermiso(Permiso Ppermiso) => _l.Add(Ppermiso);
+        public List<Permiso> Retornacomponentes() => _l;
         public override List<Permiso> RetornaPermisos()
         {
-
             _laux = new List<Permiso>();
             RecursivaRetornaPermisos(_l);
-
             return _laux;
         }
         private void RecursivaRetornaPermisos(List<Permiso> pLista)
         {
             foreach (Permiso p in pLista)
             {
-                if (p is PermisoSimple)
-                {
-                    _laux.Add(p);
-                }
-                else 
-                {
-                    RecursivaRetornaPermisos((p as PermisoCompuesto).Retornacomponentes());
-                }         
+                if (p is PermisoSimple) _laux.Add(p);
+                else RecursivaRetornaPermisos((p as PermisoCompuesto).Retornacomponentes());
             }
         }
     }
