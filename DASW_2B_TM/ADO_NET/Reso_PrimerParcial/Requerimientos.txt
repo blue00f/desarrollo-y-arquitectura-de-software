@@ -4,13 +4,13 @@ Se requiere desarrollar una aplicación para administrar los equipos informátic
 La información de los equipos se almacenará en una base de datos con la siguiente tabla:
 
 Tabla: Equipo
-    Campo	        Tipo de Dato
-    EqCodigo	    Texto
-    EqFechaIngreso	Fecha
-    EqFechaBaja	    Fecha
-    EqAñoCompra	    Número entero
-    EqEnUso	        Boolean
-    EqValorCompra	Número decimal
+    	Campo	        Tipo de Dato
+    	EqCodigo	Texto
+    	EqFechaIngreso	Fecha
+    	EqFechaBaja	Fecha
+   	EqAñoCompra	Número entero
+    	EqEnUso	        Boolean
+    	EqValorCompra	Número decimal
  
 Requisitos funcionales:
 
@@ -24,6 +24,7 @@ La aplicación debe mostrar los equipos en una grilla con las siguientes columna
     o	Fecha de Ingreso
     o	Fecha de Baja
     o	Cantidad de días en la empresa (diferencia en días entre la fecha de ingreso y la fecha de baja, o entre la fecha de ingreso y la fecha actual si el equipo sigue en uso)
+
 Si un equipo aún sigue en la empresa y no tiene fecha de baja, se debe colocar como fecha de baja por defecto 01/01/2999.
 
 2.	Validaciones obligatorias:
@@ -34,9 +35,9 @@ Si un equipo aún sigue en la empresa y no tiene fecha de baja, se debe colocar 
     o	Si el código no cumple con el formato indicado, se debe desencadenar un evento de validación y evitar que se ingrese a la base de datos.
 
 3.	Consultas requeridas (cada una en una grilla separada):
-    a. Equipos dados de baja, ordenados ascendentemente por la cantidad de días que estuvieron en la empresa.
-    b. Búsqueda de equipos por valor residual, indicando un rango desde-hasta, ordenados de forma descendente.
-    c. Consulta incremental por código, mostrando resultados a medida que se escribe el código.
+    a. 	Equipos dados de baja, ordenados ascendentemente por la cantidad de días que estuvieron en la empresa.
+    b. 	Búsqueda de equipos por valor residual, indicando un rango desde-hasta, ordenados de forma descendente.
+    c. 	Consulta incremental por código, mostrando resultados a medida que se escribe el código.
 
 4.	Requisitos técnicos:
     o	Programación Orientada a Objetos (POO):
@@ -45,6 +46,6 @@ Si un equipo aún sigue en la empresa y no tiene fecha de baja, se debe colocar 
     o	Utilizar ADO.NET en modo desconectado y objetos DataAdapter.
 
 5.	Opcionales:
-    o	Considere que los equipos los proveen proveedores. Un equipo puede ser provisto por uno varios proveedores y un proveedor nos puede proveer cero o muchos equipos. Realizar el ABM de Proveedores. Los proveedores se muestran todos en una grilla. Luego colocar un botón que permita asociar el equipo con el proveedor que lo ha provisto. Finalmente en una tercer grilla (cada dato en una columna) mostrar los datos del equipo, más los datos del proveedor y el Apellido y Nombre de la persona que el proveedor nos ha indicado que le dará mantenimiento, este dato lo ingresamos al momento de realizar la asociación del equipo con el proveedor. Del proveedor conservamos un id que lo identifica, el nombre de la empresa y la dirección de la misma.
+    o	Considere que los equipos los proveen proveedores. Un equipo puede ser provisto por uno varios proveedores y un proveedor nos puede proveer cero o muchos equipos. Realizar el ABM de Proveedores. Los proveedores se muestran todos 	en una grilla. Luego colocar un botón que permita asociar el equipo con el proveedor que lo ha provisto. Finalmente en una tercer grilla (cada dato en una columna) mostrar los datos del equipo, más los datos del proveedor y el 	Apellido y Nombre de la persona que el proveedor nos ha indicado que le dará mantenimiento, este dato lo ingresamos al momento de realizar la asociación del equipo con el proveedor. Del proveedor conservamos un id que lo 	identifica, el nombre de la empresa y la dirección de la misma.
     o	Visualización de los elementos en grillas por separado considerando su RowState (Deleted, Modified, Added).
     o	Coloque un botón que permita grabar todos los datos en un archivo XML y otro que lo abra y muestre los datos en un navegador.
