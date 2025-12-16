@@ -261,7 +261,7 @@
             // 
             // btnDepositar
             // 
-            btnDepositar.Location = new Point(366, 225);
+            btnDepositar.Location = new Point(345, 225);
             btnDepositar.Name = "btnDepositar";
             btnDepositar.Size = new Size(142, 23);
             btnDepositar.TabIndex = 16;
@@ -271,7 +271,7 @@
             // 
             // btnExtraer
             // 
-            btnExtraer.Location = new Point(366, 254);
+            btnExtraer.Location = new Point(345, 254);
             btnExtraer.Name = "btnExtraer";
             btnExtraer.Size = new Size(67, 23);
             btnExtraer.TabIndex = 17;
@@ -281,7 +281,7 @@
             // 
             // btnTransferir
             // 
-            btnTransferir.Location = new Point(433, 254);
+            btnTransferir.Location = new Point(412, 254);
             btnTransferir.Name = "btnTransferir";
             btnTransferir.Size = new Size(75, 23);
             btnTransferir.TabIndex = 18;
@@ -291,7 +291,7 @@
             // 
             // ucMonto1
             // 
-            ucMonto1.Location = new Point(366, 283);
+            ucMonto1.Location = new Point(345, 283);
             ucMonto1.Name = "ucMonto1";
             ucMonto1.Size = new Size(142, 30);
             ucMonto1.TabIndex = 19;
