@@ -196,6 +196,9 @@ namespace UI
                 var cuenta = _bllCuenta.RecuperarCuentaPorId(grillaCuentas.SelectedRows[0].Cells[0].Value.ToString());
                 var titular = grillaTitulares.SelectedRows[0].DataBoundItem as BE_Titular;
                 _bllCuenta.AsignarTitular(cuenta, titular);
+
+                Mostrar(grillaCuentasDelTitular, _bllTitular.ConsultarCuentasAnonimo(titular));
+                Mostrar(grillaTitularesDeCuenta, _bllCuenta.ConsultarTitulares(cuenta));
             }
             catch (Exception ex)
             {
@@ -209,7 +212,7 @@ namespace UI
                 if (grillaCuentas.Rows.Count > 0)
                 {
                     var cuenta = _bllCuenta.RecuperarCuentaPorId(grillaCuentas.SelectedRows[0].Cells[0].Value.ToString());
-                    Mostrar(grillaTitularesDeCuenta, _bllCuenta.ConsultarTitularesDeCuenta(cuenta));
+                    Mostrar(grillaTitularesDeCuenta, _bllCuenta.ConsultarTitulares(cuenta));
                 }
             }
             catch (Exception) { }
@@ -232,7 +235,7 @@ namespace UI
         {
             try
             {
-                if (grillaCuentas.Rows.Count == 0) throw new Exception("No hay cuentas en la grilla");
+                if (grillaCuentas.Rows.Count == 0) throw new Exception("No hay cuentas en la grilla!");
                 var cuenta = _bllCuenta.RecuperarCuentaPorId(grillaCuentas.SelectedRows[0].Cells[0].Value.ToString());
                 string montoInput = Interaction.InputBox("Ingrese el monto a depositar", "Depósito");
                 if (!decimal.TryParse(montoInput, out decimal monto)) throw new Exception("El monto debe ser numérico");
@@ -253,11 +256,11 @@ namespace UI
         {
             try
             {
-                if (grillaCuentas.Rows.Count == 0) throw new Exception("No hay cuentas en la grilla");
+                if (grillaCuentas.Rows.Count == 0) throw new Exception("No hay cuentas en la grilla!");
                 var cuenta = _bllCuenta.RecuperarCuentaPorId(grillaCuentas.SelectedRows[0].Cells[0].Value.ToString());
 
                 string montoInput = ucMonto1.RetornarText();
-                if (ucMonto1.ValidarTextBox()) throw new Exception("El monto debe ser numérico");
+                if (ucMonto1.ValidarTextBox()) throw new Exception("El monto debe ser numérico!");
                 decimal monto = Convert.ToDecimal(montoInput);
 
                 _bllCuenta.Extraer(cuenta, monto);
@@ -283,7 +286,7 @@ namespace UI
                 var cuentaOrigen = _bllCuenta.RecuperarCuentaPorId(grillaCuentas.SelectedRows[0].Cells[0].Value.ToString());
                 var cuentaDestino = _bllCuenta.RecuperarCuentaPorId(grillaCuentasDelTitular.SelectedRows[0].Cells[0].Value.ToString());
                 string montoInput = ucMonto1.RetornarText();
-                if (ucMonto1.ValidarTextBox()) throw new Exception("El monto debe ser numérico");
+                if (ucMonto1.ValidarTextBox()) throw new Exception("El monto debe ser numérico!");
                 decimal monto = Convert.ToDecimal(montoInput);
 
                 _bllCuenta.Transferir(cuentaOrigen, cuentaDestino, monto);
@@ -302,9 +305,9 @@ namespace UI
         private void btnDesdeHastaSaldo_Click(object sender, EventArgs e)
         {
             string desdeInput = Interaction.InputBox("Ingrese el valor desde", "Búsqueda (desde-hasta) por saldo");
-            if (!decimal.TryParse(desdeInput, out decimal desde)) throw new Exception("El valor DESDE debe ser numérico");
+            if (!decimal.TryParse(desdeInput, out decimal desde)) throw new Exception("El valor DESDE debe ser numérico!");
             string hastaInput = Interaction.InputBox("Ingrese el valor hasta", "Búsqueda (desde-hasta) por saldo");
-            if (!decimal.TryParse(hastaInput, out decimal hasta)) throw new Exception("El valor DESDE debe ser numérico");
+            if (!decimal.TryParse(hastaInput, out decimal hasta)) throw new Exception("El valor DESDE debe ser numérico!");
             Mostrar(grillaSaldoDesdeHasta, _bllCuenta.ConsultaDesdeHastaPorSaldo(desde, hasta));
         }
 
@@ -316,7 +319,7 @@ namespace UI
         private void btnGuardarXml_Click(object sender, EventArgs e)
         {
             _bllCuenta.GuardarXml();
-            MessageBox.Show("Archivo guardado correctamente!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Archivo guardado correctamente!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void btnAbrirXml_Click(object sender, EventArgs e)
         {

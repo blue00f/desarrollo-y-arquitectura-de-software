@@ -64,19 +64,13 @@ namespace DAL
         {
             DataTable dt = ds.Tables[pTabla];
             DataRow fila = dt.Rows.Find(pId);
-            if (fila != null)
-            {
-                fila.Delete();
-            }
+            if (fila != null) fila.Delete();
             Actualizar(pTabla);
         }
         public DataTable Consultar(string pTabla) => ds.Tables[pTabla];
         public void Actualizar(string pTabla)
         {
-            if (adaptadores.ContainsKey(pTabla))
-            {
-                adaptadores[pTabla].Update(ds.Tables[pTabla]);
-            }
+            if (adaptadores.ContainsKey(pTabla)) adaptadores[pTabla].Update(ds.Tables[pTabla]);
         }
         public void GuardarXml() => ds.WriteXml("bd_banco.xml", XmlWriteMode.WriteSchema);
     }

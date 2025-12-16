@@ -10,16 +10,12 @@ namespace ORM
         DAO _dao;
         const string tablaCC = "cuentacorriente";
         const string tablaCA = "cajaahorro";
-        public ORM_Cuenta()
-        {
-            _dao = DAO.instancia;
-        }
+        public ORM_Cuenta() => _dao = DAO.instancia;
         public void Agregar(BE_Cuenta obj)
         {
             if (obj is BE_Corriente cc) _dao.Agregar(tablaCC, cc.Codigo, cc.Saldo, cc.Descubierto);
             if (obj is BE_CajaAhorro ca) _dao.Agregar(tablaCA, ca.Codigo, ca.Saldo);
         }
-
         public void Borrar(BE_Cuenta obj)
         {
             if (obj is BE_Corriente) _dao.Borrar(tablaCC, obj.Codigo);
@@ -49,7 +45,6 @@ namespace ORM
         public List<BE_Cuenta> Consultar()
         {
             var cuentas = new List<BE_Cuenta>();
-
             DataTable dtCC = _dao.Consultar(tablaCC);
             foreach (DataRow f in dtCC.Rows)
             {
@@ -158,6 +153,7 @@ namespace ORM
                 {
                     fila[1] = fila.Field<decimal>(1) - pMonto;
                 }
+                _dao.Actualizar(tablaCC);
             }
         }
         public void Transferir(BE_Cuenta pOrigen, BE_Cuenta pDestino, decimal pMonto)

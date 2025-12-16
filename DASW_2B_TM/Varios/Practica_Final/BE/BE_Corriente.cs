@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace BE
+﻿namespace BE
 {
     public class BE_Corriente : BE_Cuenta
     {

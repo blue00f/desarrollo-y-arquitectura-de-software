@@ -9,12 +9,8 @@ namespace ORM
     {
         DAO _dao;
         const string tabla = "titular";
-        public ORM_Titular()
-        {
-            _dao = DAO.instancia;
-        }
+        public ORM_Titular() => _dao = DAO.instancia;
         public void Agregar(BE_Titular obj) => _dao.Agregar(tabla, obj.Dni, obj.Nombre, obj.Apellido);
-
         public void Borrar(BE_Titular obj) => _dao.Borrar(tabla, obj.Dni);
         public void Modificar(BE_Titular obj)
         {
@@ -57,7 +53,6 @@ namespace ORM
             DataTable dt1 = _dao.Consultar("cajaahorroxtitular");
             DataTable dt2 = _dao.Consultar("cuentacorrientextitular");
             var cuentas = new List<BE_Cuenta>();
-
             foreach (DataRow f in dt1.Rows)
             {
                 if (f.Field<string>(0) == pTitular.Dni)
@@ -77,9 +72,9 @@ namespace ORM
         private BE_Cuenta ReconstruirCuenta(string pCodigo)
         {
             BE_Cuenta cuenta = null;
+
             DataTable dtCA = _dao.Consultar("cajaahorro");
             DataRow filaCA = dtCA.Rows.Find(pCodigo);
-
             if (filaCA != null)
             {
                 cuenta = new BE_CajaAhorro(filaCA.Field<string>(0), filaCA.Field<decimal>(1));

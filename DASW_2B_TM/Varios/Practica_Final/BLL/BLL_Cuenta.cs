@@ -7,15 +7,10 @@ namespace BLL
     public class BLL_Cuenta : IABMC<BE_Cuenta>
     {
         ORM_Cuenta _orm;
-        public BLL_Cuenta()
-        {
-            _orm = new ORM_Cuenta();
-        }
+        public BLL_Cuenta() => _orm = new ORM_Cuenta();
         public void Agregar(BE_Cuenta obj) => _orm.Agregar(obj);
-
         public void Borrar(BE_Cuenta obj) => _orm.Borrar(obj);
         public void Modificar(BE_Cuenta obj) => _orm.Modificar(obj);
-
         public List<BE_Cuenta> Consultar() => _orm.Consultar();
         public List<object> ConsultarCuentas()
         {
@@ -83,7 +78,7 @@ namespace BLL
         }
 
         public void AsignarTitular(BE_Cuenta pCuenta, BE_Titular pTitular) => _orm.AsignarTitular(pCuenta, pTitular);
-        public List<BE_Titular> ConsultarTitularesDeCuenta(BE_Cuenta pCuenta) => _orm.ConsultarTitulares(pCuenta);
+        public List<BE_Titular> ConsultarTitulares(BE_Cuenta pCuenta) => _orm.ConsultarTitulares(pCuenta);
 
         public void Depositar(BE_Cuenta pCuenta, decimal pMonto) => _orm.Depositar(pCuenta, pMonto);
         public void Extraer(BE_Cuenta pCuenta, decimal pMonto)
